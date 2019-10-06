@@ -3,7 +3,7 @@
 
 Modified Blackjack [(Achieve 31)](https://docs.google.com/document/d/1X27z_b080tR1UamYVrZKEKYOMewKCnaHXBnJvbxugDY/edit) using Reinforcement Learning: 
 
-We would like to implement and play a Game similar to the Blackjack given in Sutton and Barto (5.3) with some differences in the rules of the game which are mentioned in the Jupyter notebook _Acheive31.ipynb_
+We would like to implement and play a Game similar to the Blackjack given in Sutton and Barto (5.3) with some differences in the rules of the game which are mentioned in the Jupyter notebook _Achieve31.ipynb_
 
 Deatils of the implementation can be found out in the document _Report.pdf_
 
