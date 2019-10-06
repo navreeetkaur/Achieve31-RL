@@ -23,14 +23,14 @@ Describe how will you represent the state space in the above problem?  Clearly, 
 
 #### Q2. Simulator
 Implement a simulator for this game, i.e., one which would model the environment and move to the next state based on the action taken by the agent. The moves of the dealer are simulated as part of the environment model. In the following, we will assume a Model-free setting, i.e., agent does not know the environment model and can act only based on its past experience. In particular your implementation should be a class that has (at least) two public APIs as follows (taking example of python for syntax):
-```reset()```: Resets the environment and returns initial state of the environment.
+* ```reset()```: Resets the environment and returns initial state of the environment.
 ```
 def reset():
 	stuff()
 	return initial_state
 ```
 
-```step()```: Takes an action and moves to next_state. Returns next_state, reward associated with the transition and done representing end of episode.
+* ```step()```: Takes an action and moves to next_state. Returns next_state, reward associated with the transition and done representing end of episode.
 ```
 def step(action):
 	action_based_stuff()
@@ -41,20 +41,20 @@ def step(action):
 Assume that the agent follows the following strategy: keep on playing until it can reach a sum of 25 or more using its current cards. Once this happens, stick. Note that this policy is identical to the Dealer’s policy.
 
 Use the following methods to evaluate the Q-value function (for each state action pair) using the following methods:
-- Monte Carlo - both first-visit and every visit.
+* Monte Carlo - both first-visit and every visit.
 k-step TD with values of k going from 1, 3, 5, 10, 100 and 1000. Repeat this experiment after taking averages over 100 runs and 1000 10000 runs in each case. What do you observe?
-- For the part 2 above, you should use diagram(s) similar to the ones used by Sutton and Barto for plotting the value-function. Use X-Y plane to denote the current state, and Z-axis to denote the value of each state.
+* For the part 2 above, you should use diagram(s) similar to the ones used by Sutton and Barto for plotting the value-function. Use X-Y plane to denote the current state, and Z-axis to denote the value of each state.
 
 You can use \alpha=0.1 for the above parts. 
 
 #### Q4 Policy Control
-- Implement the following methods to learn the optimal policy:
-	-  k-step lookahead SARSA. Use an epsilon-greedy policy with a fixed value of epsilon = 0.1. Use the values of k=1, 10, 100, 1000. 
-	- k-step lookahead SARSA. Use an epsilon-greedy policy. Starting with a value of epsilon = 0.1, gradually decay it inversely proportional to the number of iterations (i.e., one update corresponds to one iteration). Use the values of k=1, 10, 100, 1000 as earlier.
-	- Q-learning with a 1-step greedy look-ahead policy for update and epsilon-greedy policy for exploration in the environment with a fixed epsilon value of 0.1.
-	- Forward view of the eligibility traces for TD(0.5) using on-policy control. Decay epsilon inversely proportional to the number of iterations starting with a value of 0.1.  
-- Run each of your algorithms for 100 episodes. Use alpha (learning rate) = 0.1. For each algorithm, plot the performance (on a single graph) with number of episodes on x-axis and reward (averaged over 10 different runs) on y-axis. Which algorithm is able to learn the fastest? Comment.
-- Next train each of your algorithms for 100,000 episodes. For each algorithm, generate a set of 10 new (test) episodes by playing the game using your trained algorithm. Generate a new test set of 10 different episodes by playing with your learned algorithm in each case. Compute the performance of each of the algorithms averaged over this test set. Use alpha (learning rate) = 0.1. Next, repeat the entire experiment by learning the models for alpha values in the set {0.1, 0.2, 0.3, 0.4, 0.5}. Plot the average test performance on y-axis with alpha value on x-axis. What do you observe? Does alpha values have any impact on the final learned model?
-- Plot the value function for each actionable state for your optimal policy obtained by algorithm in 1(d) above (i.e., TD(0.5) with decaying epsilon). Use alpha - 0.1. How different is the optimal state value function from the one observed using the fixed policy described earlier in the Policy Evaluation section. Comment on your observations.
+* Implement the following methods to learn the optimal policy:
+	*  k-step lookahead SARSA. Use an epsilon-greedy policy with a fixed value of epsilon = 0.1. Use the values of k=1, 10, 100, 1000. 
+	* k-step lookahead SARSA. Use an epsilon-greedy policy. Starting with a value of epsilon = 0.1, gradually decay it inversely proportional to the number of iterations (i.e., one update corresponds to one iteration). Use the values of k=1, 10, 100, 1000 as earlier.
+	* Q-learning with a 1-step greedy look-ahead policy for update and epsilon-greedy policy for exploration in the environment with a fixed epsilon value of 0.1.
+	* Forward view of the eligibility traces for TD(0.5) using on-policy control. Decay epsilon inversely proportional to the number of iterations starting with a value of 0.1.  
+* Run each of your algorithms for 100 episodes. Use alpha (learning rate) = 0.1. For each algorithm, plot the performance (on a single graph) with number of episodes on x-axis and reward (averaged over 10 different runs) on y-axis. Which algorithm is able to learn the fastest? Comment.
+* Next train each of your algorithms for 100,000 episodes. For each algorithm, generate a set of 10 new (test) episodes by playing the game using your trained algorithm. Generate a new test set of 10 different episodes by playing with your learned algorithm in each case. Compute the performance of each of the algorithms averaged over this test set. Use alpha (learning rate) = 0.1. Next, repeat the entire experiment by learning the models for alpha values in the set {0.1, 0.2, 0.3, 0.4, 0.5}. Plot the average test performance on y-axis with alpha value on x-axis. What do you observe? Does alpha values have any impact on the final learned model?
+* Plot the value function for each actionable state for your optimal policy obtained by algorithm in 1(d) above (i.e., TD(0.5) with decaying epsilon). Use alpha - 0.1. How different is the optimal state value function from the one observed using the fixed policy described earlier in the Policy Evaluation section. Comment on your observations.
 
 
