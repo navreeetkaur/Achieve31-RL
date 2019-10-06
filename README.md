@@ -30,23 +30,21 @@ Following methods are used to evaluate the Q-value function (for each state acti
 2. k-step TD with values of k going from 1, 3, 5, 10, 100 and 1000. This experiment is repeated after taking averages over 100 runs and 1000 runs in each case.
 Diagrams similar to the ones used by Sutton and Barto for plotting the value-function are shown below. X-Y plane is used to denote the current state (dealer showing card and agent sum, with 27 different plots for each value of usuables), and Z-axis to denote the value of each state.
 Following plots are shown for usables (0,0,0)
-- MC every visit: ![MC every visit](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/MC/10000-0-0-0-every.png) 
-- MC first visit: ![MC first visit](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/MC/10000-0-0-0-first.png)
+- MC every visit: ![MC every visit](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/MC/10000-0-0-0-every.png)
 - 1 step TD (V averaged over 1000 runs): ![1 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/1TD-num1000-(0-0-0).png)
-- 3 step TD (V averaged over 1000 runs): ![3 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/3TD-num1000-(0-0-0).png)
-- 5 step TD (V averaged over 1000 runs): ![5 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/5TD-num1000-(0-0-0).png)
-- 10 step TD (V averaged over 1000 runs): ![10 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/10TD-num1000-(0-0-0).png)
-- 100 step TD (V averaged over 1000 runs): ![100 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/100TD-num1000-(0-0-0).png)
 - 1000 step TD (V averaged over 1000 runs): ![1000 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/1000TD-num1000-(0-0-0).png)
 
 #### Policy Control
-* Implement the following methods to learn the optimal policy:
-	*  k-step lookahead SARSA. Use an epsilon-greedy policy with a fixed value of epsilon = 0.1. Use the values of k=1, 10, 100, 1000. 
-	* k-step lookahead SARSA. Use an epsilon-greedy policy. Starting with a value of epsilon = 0.1, gradually decay it inversely proportional to the number of iterations (i.e., one update corresponds to one iteration). Use the values of k=1, 10, 100, 1000 as earlier.
+* The following methods are implemented to learn the optimal policy:
+	*  k-step lookahead SARSA, using an epsilon-greedy policy with a fixed value of epsilon = 0.1 and with k=1, 10, 100, 1000 
+	* k-step lookahead SARSA, using an epsilon-greedy policy, with k=1, 10, 100, 1000 . Starting with a value of epsilon = 0.1, it is gradually decayed inversely proportional to the number of iterations (i.e., one update corresponds to one iteration)
 	* Q-learning with a 1-step greedy look-ahead policy for update and epsilon-greedy policy for exploration in the environment with a fixed epsilon value of 0.1.
-	* Forward view of the eligibility traces for TD(0.5) using on-policy control. Decay epsilon inversely proportional to the number of iterations starting with a value of 0.1.  
-* Run each of your algorithms for 100 episodes. Use alpha (learning rate) = 0.1. For each algorithm, plot the performance (on a single graph) with number of episodes on x-axis and reward (averaged over 10 different runs) on y-axis. Which algorithm is able to learn the fastest? Comment.
-* Next train each of your algorithms for 100,000 episodes. For each algorithm, generate a set of 10 new (test) episodes by playing the game using your trained algorithm. Generate a new test set of 10 different episodes by playing with your learned algorithm in each case. Compute the performance of each of the algorithms averaged over this test set. Use alpha (learning rate) = 0.1. Next, repeat the entire experiment by learning the models for alpha values in the set {0.1, 0.2, 0.3, 0.4, 0.5}. Plot the average test performance on y-axis with alpha value on x-axis. What do you observe? Does alpha values have any impact on the final learned model?
-* Plot the value function for each actionable state for your optimal policy obtained by algorithm in 1(d) above (i.e., TD(0.5) with decaying epsilon). Use alpha - 0.1. How different is the optimal state value function from the one observed using the fixed policy described earlier in the Policy Evaluation section. Comment on your observations.
+	* Forward view of the eligibility traces for TD(0.5) using on-policy control. Epsilon is decayed inversely proportional to the number of iterations starting with a value of 0.1.  
+* Each algorithm is ran for 100 episodes esing alpha (learning rate) = 0.1. For each algorithm, performance with number of episodes on x-axis and reward (averaged over 10 different runs) on y-axis is shown below. 
+![](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/rewards_vs_episodes.png)
+* Each algorithm is then trained for 100,000 episodes. For each algorithm, a set of 10 new (test) episodes is generated by playing the game using the trained algorithm. The performance of each of the algorithms is computed, averaged over this test set. Alpha (learning rate) = 0.1 is used. Next, the entire experiment is reeated by learning the models for alpha values in the set {0.1, 0.2, 0.3, 0.4, 0.5}. The average test performance on y-axis with alpha value on x-axis is shown below.
+![](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/rewards_vs_alphas.png)
+* The value function for each actionable state for the optimal policy obtained by TD(0.5) with decaying epsilon is shown below.
+![](https://github.com/navreeetkaur/blackjack/blob/master/sample%20plots/TD_lambda-500000.png)
 
 
