@@ -48,3 +48,4 @@ Following plots are shown for usables (0,0,0)
 ![](https://github.com/navreeetkaur/blackjack/blob/master/sample%20plots/TD_lambda-500000.png)
 
 
+##### _A detailed explaination of the observations and plots is given in the Report_
