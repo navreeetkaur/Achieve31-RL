@@ -30,14 +30,14 @@ Following methods are used to evaluate the Q-value function (for each state acti
 2. k-step TD with values of k going from 1, 3, 5, 10, 100 and 1000. This experiment is repeated after taking averages over 100 runs and 1000 runs in each case.
 Diagrams similar to the ones used by Sutton and Barto for plotting the value-function are shown below. X-Y plane is used to denote the current state (dealer showing card and agent sum, with 27 different plots for each value of usuables), and Z-axis to denote the value of each state.
 Following plots are shown for usables (0,0,0)
-- ![MC every visit](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/MC/10000-0-0-0-every.png) 
-- ![MC first visit](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/MC/10000-0-0-0-first.png)
-- ![1 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/1TD-num1000-(0-0-0).png
-- ![3 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/3TD-num1000-(0-0-0).png)
-- ![5 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/5TD-num1000-(0-0-0).png
-- ![10 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/10TD-num1000-(0-0-0).png)
-- ![100 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/100TD-num1000-(0-0-0).png
-- ![1000 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/1000TD-num1000-(0-0-0).png)
+- MC every visit: ![MC every visit](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/MC/10000-0-0-0-every.png) 
+- MC first visit: ![MC first visit](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/MC/10000-0-0-0-first.png)
+- 1 step TD (V averaged over 1000 runs): ![1 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/1TD-num1000-(0-0-0).png)
+- 3 step TD (V averaged over 1000 runs): ![3 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/3TD-num1000-(0-0-0).png)
+- 5 step TD (V averaged over 1000 runs): ![5 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/5TD-num1000-(0-0-0).png)
+- 10 step TD (V averaged over 1000 runs): ![10 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/10TD-num1000-(0-0-0).png)
+- 100 step TD (V averaged over 1000 runs): ![100 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/100TD-num1000-(0-0-0).png)
+- 1000 step TD (V averaged over 1000 runs): ![1000 step TD (V averaged over 1000 runs)](https://github.com/navreeetkaur/blackjack/blob/master/all%20plots/TD/1000TD-num1000-(0-0-0).png)
 
 #### Policy Control
 * Implement the following methods to learn the optimal policy:
